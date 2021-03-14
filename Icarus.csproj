@@ -134,6 +134,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ResidentController.cs" />
+    <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -456,6 +457,12 @@
     <Content Include="Views\Expense\Details.cshtml" />
     <Content Include="Views\Expense\Edit.cshtml" />
     <Content Include="Views\Expense\Index.cshtml" />
+    <Content Include="Views\Vendors\Create.cshtml" />
+    <Content Include="Views\Vendors\Delete.cshtml" />
+    <Content Include="Views\Vendors\Details.cshtml" />
+    <Content Include="Views\Vendors\Edit.cshtml" />
+    <Content Include="Views\Vendors\Index.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
