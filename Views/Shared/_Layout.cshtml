@@ -9,9 +9,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
-    @Html.Partial("_Navbar")
-    
     <div class="ml-5 mr-5">
         @RenderBody()
     </div>
@@ -21,3 +18,12 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<style>
+    .tableheadleft {
+        border-top-left-radius: 15px;
+    }
+
+    .tableheadright {
+        border-top-right-radius: 15px;
+    }
+</style>

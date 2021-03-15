@@ -1,0 +1,115 @@
+﻿@model Icarus.Models.tblRequest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateNeeded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateNeeded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Request)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Request)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Budget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDRequestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDRequestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApproverNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApproverNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAcc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAcc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestorNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestorNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDRequest }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

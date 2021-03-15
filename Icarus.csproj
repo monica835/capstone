@@ -130,9 +130,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmissionBrowsesController.cs" />
     <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InquiriesController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\ResidentController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -463,6 +466,21 @@
     <Content Include="Views\Vendors\Edit.cshtml" />
     <Content Include="Views\Vendors\Index.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Inquiries\Create.cshtml" />
+    <Content Include="Views\Inquiries\Delete.cshtml" />
+    <Content Include="Views\Inquiries\Details.cshtml" />
+    <Content Include="Views\Inquiries\Edit.cshtml" />
+    <Content Include="Views\Inquiries\Index.cshtml" />
+    <Content Include="Views\Requests\Create.cshtml" />
+    <Content Include="Views\Requests\Delete.cshtml" />
+    <Content Include="Views\Requests\Details.cshtml" />
+    <Content Include="Views\Requests\Edit.cshtml" />
+    <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\AdmissionBrowses\Create.cshtml" />
+    <Content Include="Views\AdmissionBrowses\Delete.cshtml" />
+    <Content Include="Views\AdmissionBrowses\Details.cshtml" />
+    <Content Include="Views\AdmissionBrowses\Edit.cshtml" />
+    <Content Include="Views\AdmissionBrowses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
