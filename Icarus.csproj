@@ -131,11 +131,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdmissionBrowsesController.cs" />
+    <Compile Include="Controllers\AssertionsController.cs" />
+    <Compile Include="Controllers\ChartOfAccountsController.cs" />
     <Compile Include="Controllers\ExpenseController.cs" />
+    <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
+    <Compile Include="Controllers\ResidentActivitiesController.cs" />
     <Compile Include="Controllers\ResidentController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -481,6 +486,27 @@
     <Content Include="Views\AdmissionBrowses\Details.cshtml" />
     <Content Include="Views\AdmissionBrowses\Edit.cshtml" />
     <Content Include="Views\AdmissionBrowses\Index.cshtml" />
+    <Content Include="Views\Reports\Reports.cshtml" />
+    <Content Include="Views\Assertions\Create.cshtml" />
+    <Content Include="Views\Assertions\Delete.cshtml" />
+    <Content Include="Views\Assertions\Details.cshtml" />
+    <Content Include="Views\Assertions\Edit.cshtml" />
+    <Content Include="Views\Assertions\Index.cshtml" />
+    <Content Include="Views\ResidentActivities\Create.cshtml" />
+    <Content Include="Views\ResidentActivities\Delete.cshtml" />
+    <Content Include="Views\ResidentActivities\Details.cshtml" />
+    <Content Include="Views\ResidentActivities\Edit.cshtml" />
+    <Content Include="Views\ResidentActivities\Index.cshtml" />
+    <Content Include="Views\ChartOfAccounts\Create.cshtml" />
+    <Content Include="Views\ChartOfAccounts\Delete.cshtml" />
+    <Content Include="Views\ChartOfAccounts\Details.cshtml" />
+    <Content Include="Views\ChartOfAccounts\Edit.cshtml" />
+    <Content Include="Views\ChartOfAccounts\Index.cshtml" />
+    <Content Include="Views\FacilityReports\Create.cshtml" />
+    <Content Include="Views\FacilityReports\Delete.cshtml" />
+    <Content Include="Views\FacilityReports\Details.cshtml" />
+    <Content Include="Views\FacilityReports\Edit.cshtml" />
+    <Content Include="Views\FacilityReports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

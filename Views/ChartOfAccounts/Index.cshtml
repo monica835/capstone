@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Icarus.Models.tblExpensesChartOfAccount>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDAccount }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDAccount }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDAccount })
+        </td>
+    </tr>
+}
+
+</table>

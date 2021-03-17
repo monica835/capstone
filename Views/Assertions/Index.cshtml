@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Icarus.Models.tblAssertion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDAdmission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssertionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDAssertionCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Markup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkupValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDChargeToCodep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDAdmission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssertionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDAssertionCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Markup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarkupValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDChargeToCodep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDAssertion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDAssertion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDAssertion })
+        </td>
+    </tr>
+}
+
+</table>
