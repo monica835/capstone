@@ -137,6 +137,7 @@
     <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
+    <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
@@ -507,6 +508,7 @@
     <Content Include="Views\FacilityReports\Details.cshtml" />
     <Content Include="Views\FacilityReports\Edit.cshtml" />
     <Content Include="Views\FacilityReports\Index.cshtml" />
+    <Content Include="Views\NavBar\NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
