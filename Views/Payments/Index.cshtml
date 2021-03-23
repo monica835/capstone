@@ -5,6 +5,9 @@
 }
 
 <div>
+     
+      
+    
     <div class="d-flex mt-2 justify-content-between">
         <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
         <div>
@@ -14,6 +17,13 @@
                 <span>
                     &nbsp;
                     @Html.ActionLink("Add Payment", "Create")
+
+                </span>
+            </button>
+            <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
+                <span>
+                    &nbsp;
+                    @Html.ActionLink("Show Verified","")
 
                 </span>
             </button>
