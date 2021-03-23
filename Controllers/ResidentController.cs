@@ -105,7 +105,7 @@ namespace Icarus.Controllers
         }
 
         // POST: Resident/Delete/5
-        [HttpPost, ActionName("Resident")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
