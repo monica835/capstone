@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Icarus.Models.tblPayment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <div class="d-flex mt-2 justify-content-between">
+        <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
+        <div>
+
+            <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                <span>
+                    &nbsp;
+                    @Html.ActionLink("Add Payment", "Create")
+
+                </span>
+            </button>
+        </div>
+    </div>
+    <hr>
+        <table class="table table-striped table-hover table-borderless">
+            <thead style="background-color: #6C7AE0; color: white;">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaidDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IDAdmission)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalPaid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IDPaymentMethod)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Bank)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CheckNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CheckDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsVerified)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PostedDate)
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+            <tbody id="myTable">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PaidDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IDAdmission)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPaid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IDPaymentMethod)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Bank)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CheckNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CheckDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Notes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsVerified)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostedDate)
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-warning">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.IDPayment })
+
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger">
+                                @Html.ActionLink("Delete", "Delete", new { id = item.IDPayment })
+
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

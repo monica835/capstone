@@ -21,13 +21,13 @@ namespace Icarus.Controllers
         }
 
         // GET: Inquiries/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? IDInquiry)
         {
-            if (id == null)
+            if (IDInquiry == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblInquiry tblInquiry = db.tblInquiries.Find(id);
+            tblInquiry tblInquiry = db.tblInquiries.Find(IDInquiry);
             if (tblInquiry == null)
             {
                 return HttpNotFound();

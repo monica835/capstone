@@ -1,38 +1,45 @@
-﻿@model Icarus.Models.vrptPayment
+﻿@model Icarus.Models.tblPayment
 
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
 }
 
-<h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>vrptPayment</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.IDPayment)
+<div class="container">
+    <h2>Create</h2>
 
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
         <div class="form-group">
-            @Html.LabelFor(model => model.Resident, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PaidDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Resident, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Resident, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PaidDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PaidDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @Html.HiddenFor(model => model.IDResident)
-
-        @Html.HiddenFor(model => model.PaidDate)
-
-        @Html.HiddenFor(model => model.IDAdmission)
-
-        @Html.HiddenFor(model => model.TotalPaid)
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDAdmission, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IDAdmission, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IDAdmission, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalPaid, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TotalPaid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalPaid, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.IDPaymentMethod, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -41,17 +48,8 @@
                 @Html.ValidationMessageFor(model => model.IDPaymentMethod, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PaymentMethod, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PaymentMethod, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PaymentMethod, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @Html.HiddenFor(model => model.PayDetails)
-
+    </div>
+    <div class="row">
         <div class="form-group">
             @Html.LabelFor(model => model.Bank, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -67,7 +65,8 @@
                 @Html.ValidationMessageFor(model => model.CheckNo, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="form-group">
             @Html.LabelFor(model => model.CheckDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -83,7 +82,8 @@
                 @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="form-group">
             @Html.LabelFor(model => model.IsVerified, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -92,20 +92,25 @@
             </div>
         </div>
 
-        @Html.HiddenFor(model => model.PostedDate)
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            @Html.LabelFor(model => model.PostedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PostedDate, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
-}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-sm btn-outline-secondary" />
+            <button class="btn btn-sm btn-outline-primary">
+                @Html.ActionLink("Back to List", "Index")
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+            </button>
+        </div>
+    </div>
 </div>
-
+}
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
