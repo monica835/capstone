@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,107 +11,107 @@ using Icarus.Models;
 
 namespace Icarus.Controllers
 {
-    public class PaymentController : Controller
+    public class PaymentsController : Controller
     {
         private ICARUSDBEntities db = new ICARUSDBEntities();
 
-        // GET: Payment
+        // GET: tblPayments
         public ActionResult Index()
         {
-            return View(db.vrptPayments.ToList());
+            return View(db.tblPayments.ToList());
         }
 
-        // GET: Payment/Details/5
+        // GET: tblPayments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptPayment vrptPayment = db.vrptPayments.Find(id);
-            if (vrptPayment == null)
+            tblPayment tblPayment = db.tblPayments.Find(id);
+            if (tblPayment == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptPayment);
+            return View(tblPayment);
         }
 
-        // GET: Payment/Create
+        // GET: tblPayments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Payment/Create
+        // POST: tblPayments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDPayment,Resident,IDResident,PaidDate,IDAdmission,TotalPaid,IDPaymentMethod,PaymentMethod,PayDetails,Bank,CheckNo,CheckDate,Notes,IsVerified,PostedDate")] vrptPayment vrptPayment)
+        public ActionResult Create([Bind(Include = "IDPayment,PaidDate,IDAdmission,TotalPaid,IDPaymentMethod,Bank,CheckNo,CheckDate,Notes,IsVerified,PostedDate")] tblPayment tblPayment)
         {
             if (ModelState.IsValid)
             {
-                db.vrptPayments.Add(vrptPayment);
+                db.tblPayments.Add(tblPayment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(vrptPayment);
+            return View(tblPayment);
         }
 
-        // GET: Payment/Edit/5
+        // GET: tblPayments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptPayment vrptPayment = db.vrptPayments.Find(id);
-            if (vrptPayment == null)
+            tblPayment tblPayment = db.tblPayments.Find(id);
+            if (tblPayment == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptPayment);
+            return View(tblPayment);
         }
 
-        // POST: Payment/Edit/5
+        // POST: tblPayments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDPayment,Resident,IDResident,PaidDate,IDAdmission,TotalPaid,IDPaymentMethod,PaymentMethod,PayDetails,Bank,CheckNo,CheckDate,Notes,IsVerified,PostedDate")] vrptPayment vrptPayment)
+        public ActionResult Edit([Bind(Include = "IDPayment,PaidDate,IDAdmission,TotalPaid,IDPaymentMethod,Bank,CheckNo,CheckDate,Notes,IsVerified,PostedDate")] tblPayment tblPayment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vrptPayment).State = EntityState.Modified;
+                db.Entry(tblPayment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vrptPayment);
+            return View(tblPayment);
         }
 
-        // GET: Payment/Delete/5
+        // GET: tblPayments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptPayment vrptPayment = db.vrptPayments.Find(id);
-            if (vrptPayment == null)
+            tblPayment tblPayment = db.tblPayments.Find(id);
+            if (tblPayment == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptPayment);
+            return View(tblPayment);
         }
 
-        // POST: Payment/Delete/5
+        // POST: tblPayments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            vrptPayment vrptPayment = db.vrptPayments.Find(id);
-            db.vrptPayments.Remove(vrptPayment);
+            tblPayment tblPayment = db.tblPayments.Find(id);
+            db.tblPayments.Remove(tblPayment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

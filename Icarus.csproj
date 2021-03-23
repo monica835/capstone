@@ -130,7 +130,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdmissionBrowsesController.cs" />
     <Compile Include="Controllers\AssertionsController.cs" />
     <Compile Include="Controllers\ChartOfAccountsController.cs" />
     <Compile Include="Controllers\ExpensController.cs" />
@@ -138,11 +137,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\ResidentActivitiesController.cs" />
     <Compile Include="Controllers\ResidentController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\AdmissionsController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -477,11 +477,6 @@
     <Content Include="Views\Requests\Details.cshtml" />
     <Content Include="Views\Requests\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
-    <Content Include="Views\AdmissionBrowses\Create.cshtml" />
-    <Content Include="Views\AdmissionBrowses\Delete.cshtml" />
-    <Content Include="Views\AdmissionBrowses\Details.cshtml" />
-    <Content Include="Views\AdmissionBrowses\Edit.cshtml" />
-    <Content Include="Views\AdmissionBrowses\Index.cshtml" />
     <Content Include="Views\Reports\Reports.cshtml" />
     <Content Include="Views\Assertions\Create.cshtml" />
     <Content Include="Views\Assertions\Delete.cshtml" />
@@ -508,6 +503,16 @@
     <Content Include="Views\Expens\Details.cshtml" />
     <Content Include="Views\Expens\Edit.cshtml" />
     <Content Include="Views\Expens\Index.cshtml" />
+    <Content Include="Views\Payments\Create.cshtml" />
+    <Content Include="Views\Payments\Delete.cshtml" />
+    <Content Include="Views\Payments\Details.cshtml" />
+    <Content Include="Views\Payments\Edit.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\Admissions\Create.cshtml" />
+    <Content Include="Views\Admissions\Delete.cshtml" />
+    <Content Include="Views\Admissions\Details.cshtml" />
+    <Content Include="Views\Admissions\Edit.cshtml" />
+    <Content Include="Views\Admissions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

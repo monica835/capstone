@@ -4,118 +4,121 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
+    <h2>Delete</h2>
+    <div>
+        <h4>tblRequest</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DateRequest)
+            </dt>
 
-<h2>Delete</h2>
+            <dd>
+                @Html.DisplayFor(model => model.DateRequest)
+            </dd>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>tblRequest</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DateRequest)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateNeeded)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateRequest)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DateNeeded)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateNeeded)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RequestedBy)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateNeeded)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RequestedBy)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RequestedBy)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Request)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RequestedBy)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Request)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Request)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Budget)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Request)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Budget)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Budget)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ApprovedBy)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Budget)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ApprovedBy)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApprovedBy)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDRequestStatus)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApprovedBy)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.IDRequestStatus)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IDRequestStatus)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ApproverNotes)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IDRequestStatus)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ApproverNotes)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApproverNotes)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateApproved)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApproverNotes)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DateApproved)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateApproved)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RequestorEmail)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateApproved)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RequestorEmail)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RequestorEmail)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateAcc)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RequestorEmail)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DateAcc)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateAcc)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RequestorNotes)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateAcc)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RequestorNotes)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RequestorNotes)
-        </dt>
+        </dl>
 
-        <dd>
-            @Html.DisplayFor(model => model.RequestorNotes)
-        </dd>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    </dl>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-sm btn-outline-dark" />
+                <button type="button" class="btn btn-sm btn-outline-warning">
+                    @Html.ActionLink("Back to List", "Index")
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+                </button>
+            </div>
+        }
+    </div>
 </div>
