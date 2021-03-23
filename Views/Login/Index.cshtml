@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Login to Icarus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container ">
+    <div class="row mt-5">
+        <div class="col-sm-12 d-flex align-items-center justify-content-center mt-5">
+            <div class="card cards col-sm-5" style="background-color:#C9E6F0;">
+                <div class="d-flex align-items-center justify-content-center m-5">
+                    <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" width="25%" heigth="25%" />
+                </div>
+                <div class="formInput">
+                    <form class="align-items-center justify-content-center" style="margin-left:15%;">
+                        <input type="text" class="username mb-3" placeholder="Username" />
+                        <input type="password" class="password mb-5" placeholder="Password" />
+                        <button type="submit" class="btn btn-primary mb-5" style="width:300px">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #444D8E;
+    }
+
+    .formInput {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .cards {
+        /*box-shadow: 5px 5px #888888*/
+        box-shadow: 0 0 3px 5px #888888;
+    }
+
+    input[type=text] {
+        border: none;
+        background-color: #C9E6F0;
+        outline: 0;
+        font-size: 18px;
+        width: 300px;
+        height: 30px;
+        border-bottom: 1px solid gray;
+    }
+
+    input[type=text]:focus {
+        border: none;
+        background-color: #C9E6F0;
+        outline: 0;
+        width: 300px;
+        height: 30px;
+        border-bottom: 1px solid gray;
+    }
+
+    input[type=password] {
+        border: none;
+        background-color: #C9E6F0;
+        outline: 0;
+        font-size: 18px;
+        width: 300px;
+        height: 30px;
+        border-bottom: 1px solid gray;
+    }
+
+        input[type=password]:focus {
+            border: none;
+            background-color: #C9E6F0;
+            outline: 0;
+            width: 300px;
+            height: 30px;
+            border-bottom: 1px solid gray;
+        }
+</style>
+
+
+

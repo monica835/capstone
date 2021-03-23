@@ -136,6 +136,7 @@
     <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
@@ -513,6 +514,7 @@
     <Content Include="Views\Admissions\Details.cshtml" />
     <Content Include="Views\Admissions\Edit.cshtml" />
     <Content Include="Views\Admissions\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
