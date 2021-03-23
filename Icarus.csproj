@@ -136,11 +136,8 @@
     <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Controllers\NavBarController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
->>>>>>> 5df7ffbdd108412f94ec3dfad7b1890bc8228da4
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\ResidentActivitiesController.cs" />
