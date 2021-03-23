@@ -5,13 +5,24 @@
 }
 <div class="">
     <div class="d-flex mt-2 justify-content-between">
+<<<<<<< HEAD:Views/Admissions/Index.cshtml
         <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
+=======
+        <form asp-controller=" AdmissionBrowses" asp-action="Index">
+            <input name="SearchString" class="form-control col-sm-4" type="search" placeholder="Search" aria-label="Search">
+
+        </form>
+>>>>>>> 5df7ffbdd108412f94ec3dfad7b1890bc8228da4:Views/AdmissionBrowses/Index.cshtml
         <div>
             <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
+<<<<<<< HEAD:Views/Admissions/Index.cshtml
                 <span>
                     &nbsp;  @Html.ActionLink("New Admission", "Create")
                 </span>
+=======
+                <span>&nbsp;New Admission </span>
+>>>>>>> 5df7ffbdd108412f94ec3dfad7b1890bc8228da4:Views/AdmissionBrowses/Index.cshtml
             </button>
         </div>
     </div>
