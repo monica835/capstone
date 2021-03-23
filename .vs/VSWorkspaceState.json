@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\App_Data",
+    "\\App_Start",
+    "\\Views",
+    "\\Views\\Expense",
+    "\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Views\\Expense\\Create.cshtml",
+  "PreviewInSolutionExplorer": false
+}
