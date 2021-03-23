@@ -5,13 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="">
+<div class="container">
     <div class="d-flex mt-2 justify-content-between">
-        <input class="form-control col-sm-4" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
         <div>
             <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                <span>&nbsp;Add Request</span>
+                <span>
+                    &nbsp;  @Html.ActionLink("New Request", "Create")
+                </span>
             </button>
         </div>
     </div>
@@ -50,12 +52,15 @@
                     <th scope="col">
                         @Html.DisplayNameFor(model => model.DateAcc)
                     </th>
-                    <th class="tableheadright" scope="col">
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.IDRequestStatus)
+                    </th>
+                    <th class="tableheadright" scope="col">
+                        Actions
                     </th>
                 </tr>
             </thead>
-            <tbody style="font-size:12px;">
+            <tbody style="font-size:12px;" id="myTable">
                 @foreach (var item in Model)
                 {
                     <tr>
@@ -92,10 +97,21 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.IDRequestStatus)
                         </td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-warning">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.IDRequest })
+
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger">
+                                @Html.ActionLink("Delete", "Delete", new { id = item.IDRequest })
+
+
+                            </button>
+                        </td>
                     </tr>
-            }
-                </tbody>
-            </table>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 <style>
@@ -107,3 +123,13 @@
         border-top-right-radius: 15px;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

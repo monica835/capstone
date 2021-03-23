@@ -10,107 +10,107 @@ using Icarus.Models;
 
 namespace Icarus.Controllers
 {
-    public class ExpenseController : Controller
+    public class ExpensController : Controller
     {
         private ICARUSDBEntities db = new ICARUSDBEntities();
 
-        // GET: Expense
+        // GET: Expens
         public ActionResult Index()
         {
-            return View(db.vrptExpenses.ToList());
+            return View(db.tblExpenses.ToList());
         }
 
-        // GET: Expense/Details/5
+        // GET: Expens/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptExpens vrptExpens = db.vrptExpenses.Find(id);
-            if (vrptExpens == null)
+            tblExpens tblExpens = db.tblExpenses.Find(id);
+            if (tblExpens == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptExpens);
+            return View(tblExpens);
         }
 
-        // GET: Expense/Create
+        // GET: Expens/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Expense/Create
+        // POST: Expens/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDExpense,ExpenseDate,ORNumber,Vendor,Particulars,Account,EncodedBy,ChargeToCodep,VATSales,VATAmount,VATExempt,Amount")] vrptExpens vrptExpens)
+        public ActionResult Create([Bind(Include = "IDExpense,DatePosted,ExpenseDate,ORNumber,IDVendor,Particulars,WithReceipt,IDAccount,EncodedBy,IsVerified,ChargeToCodep,VATSales,VATAmount,VATExempt,Amount,PostedDate,ChargedToCodep,TIN")] tblExpens tblExpens)
         {
             if (ModelState.IsValid)
             {
-                db.vrptExpenses.Add(vrptExpens);
+                db.tblExpenses.Add(tblExpens);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(vrptExpens);
+            return View(tblExpens);
         }
 
-        // GET: Expense/Edit/5
+        // GET: Expens/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptExpens vrptExpens = db.vrptExpenses.Find(id);
-            if (vrptExpens == null)
+            tblExpens tblExpens = db.tblExpenses.Find(id);
+            if (tblExpens == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptExpens);
+            return View(tblExpens);
         }
 
-        // POST: Expense/Edit/5
+        // POST: Expens/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDExpense,ExpenseDate,ORNumber,Vendor,Particulars,Account,EncodedBy,ChargeToCodep,VATSales,VATAmount,VATExempt,Amount")] vrptExpens vrptExpens)
+        public ActionResult Edit([Bind(Include = "IDExpense,DatePosted,ExpenseDate,ORNumber,IDVendor,Particulars,WithReceipt,IDAccount,EncodedBy,IsVerified,ChargeToCodep,VATSales,VATAmount,VATExempt,Amount,PostedDate,ChargedToCodep,TIN")] tblExpens tblExpens)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vrptExpens).State = EntityState.Modified;
+                db.Entry(tblExpens).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vrptExpens);
+            return View(tblExpens);
         }
 
-        // GET: Expense/Delete/5
+        // GET: Expens/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vrptExpens vrptExpens = db.vrptExpenses.Find(id);
-            if (vrptExpens == null)
+            tblExpens tblExpens = db.tblExpenses.Find(id);
+            if (tblExpens == null)
             {
                 return HttpNotFound();
             }
-            return View(vrptExpens);
+            return View(tblExpens);
         }
 
-        // POST: Expense/Delete/5
+        // POST: Expens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            vrptExpens vrptExpens = db.vrptExpenses.Find(id);
-            db.vrptExpenses.Remove(vrptExpens);
+            tblExpens tblExpens = db.tblExpenses.Find(id);
+            db.tblExpenses.Remove(tblExpens);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

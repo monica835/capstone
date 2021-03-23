@@ -7,11 +7,16 @@
 
 <div>
     <div class="d-flex mt-2 justify-content-between">
-        <input class="form-control col-sm-4" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
         <div>
+          
             <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                <span>&nbsp;Add Inquiry</span>
+                <span>
+                    &nbsp;
+                    @Html.ActionLink("Add Inquiry", "Create")
+
+                </span>
             </button>
         </div>
     </div>
@@ -32,37 +37,50 @@
                     <th scope="col">
                         @Html.DisplayNameFor(model => model.ContactNo)
                     </th>
-                    <th  scope="col">
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.IDInquiryStatus)
                     </th>
-                    <th class="tableheadright" scope="col">
+                    <th scope="col">
                         @Html.DisplayNameFor(model => model.FollowupOn)
+                    </th>
+                    <th class="tableheadright" scope="col">
+                       Actions
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td scope="row">
-                            <a href="">@Html.DisplayFor(modelItem => item.IDInquiry)</a>
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.InquiryDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Codep)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ContactNo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IDInquiryStatus)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FollowupOn)
-                        </td>
-                    </tr>
+                <tr>
+                    <td scope="row">
+                        <a href="">@Html.DisplayFor(modelItem => item.IDInquiry)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InquiryDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codep)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDInquiryStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FollowupOn)
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-warning">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.IDInquiry })
+
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.IDInquiry })
+
+                        </button>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
@@ -77,4 +95,14 @@
         border-top-right-radius: 15px;
     }
 </style>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 

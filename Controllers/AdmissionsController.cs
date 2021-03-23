@@ -10,107 +10,107 @@ using Icarus.Models;
 
 namespace Icarus.Controllers
 {
-    public class AdmissionBrowsesController : Controller
+    public class AdmissionsController : Controller
     {
         private ICARUSDBEntities db = new ICARUSDBEntities();
 
-        // GET: AdmissionBrowses
+        // GET: tblAdmissions
         public ActionResult Index()
         {
-            return View(db.vAdmissionBrowses.ToList());
+            return View(db.tblAdmissions.ToList());
         }
 
-        // GET: AdmissionBrowses/Details/5
+        // GET: tblAdmissions/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vAdmissionBrowse vAdmissionBrowse = db.vAdmissionBrowses.Find(id);
-            if (vAdmissionBrowse == null)
+            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
+            if (tblAdmission == null)
             {
                 return HttpNotFound();
             }
-            return View(vAdmissionBrowse);
+            return View(tblAdmission);
         }
 
-        // GET: AdmissionBrowses/Create
+        // GET: tblAdmissions/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdmissionBrowses/Create
+        // POST: tblAdmissions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDAdmission,IDResident,Resident,Nickname,AdmissionDate,TerminationDate,TreatmentFee,TotalBilling,TotalPaid,OverallBalance,IsActive,LastPaymentInfo,StopTFBilling,rank,Phase")] vAdmissionBrowse vAdmissionBrowse)
+        public ActionResult Create([Bind(Include = "IDAdmission,IDResident,AdmissionDate,TerminationDate,TreatmentFee,IsActive,Notes,TotalBilling,TotalPaid,OverallBalance,StopTFBilling,Status,IDRank,Phase")] tblAdmission tblAdmission)
         {
             if (ModelState.IsValid)
             {
-                db.vAdmissionBrowses.Add(vAdmissionBrowse);
+                db.tblAdmissions.Add(tblAdmission);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(vAdmissionBrowse);
+            return View(tblAdmission);
         }
 
-        // GET: AdmissionBrowses/Edit/5
+        // GET: tblAdmissions/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vAdmissionBrowse vAdmissionBrowse = db.vAdmissionBrowses.Find(id);
-            if (vAdmissionBrowse == null)
+            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
+            if (tblAdmission == null)
             {
                 return HttpNotFound();
             }
-            return View(vAdmissionBrowse);
+            return View(tblAdmission);
         }
 
-        // POST: AdmissionBrowses/Edit/5
+        // POST: tblAdmissions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDAdmission,IDResident,Resident,Nickname,AdmissionDate,TerminationDate,TreatmentFee,TotalBilling,TotalPaid,OverallBalance,IsActive,LastPaymentInfo,StopTFBilling,rank,Phase")] vAdmissionBrowse vAdmissionBrowse)
+        public ActionResult Edit([Bind(Include = "IDAdmission,IDResident,AdmissionDate,TerminationDate,TreatmentFee,IsActive,Notes,TotalBilling,TotalPaid,OverallBalance,StopTFBilling,Status,IDRank,Phase")] tblAdmission tblAdmission)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(vAdmissionBrowse).State = EntityState.Modified;
+                db.Entry(tblAdmission).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vAdmissionBrowse);
+            return View(tblAdmission);
         }
 
-        // GET: AdmissionBrowses/Delete/5
+        // GET: tblAdmissions/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vAdmissionBrowse vAdmissionBrowse = db.vAdmissionBrowses.Find(id);
-            if (vAdmissionBrowse == null)
+            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
+            if (tblAdmission == null)
             {
                 return HttpNotFound();
             }
-            return View(vAdmissionBrowse);
+            return View(tblAdmission);
         }
 
-        // POST: AdmissionBrowses/Delete/5
+        // POST: tblAdmissions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            vAdmissionBrowse vAdmissionBrowse = db.vAdmissionBrowses.Find(id);
-            db.vAdmissionBrowses.Remove(vAdmissionBrowse);
+            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
+            db.tblAdmissions.Remove(tblAdmission);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
