@@ -5,103 +5,180 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>tblResident</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Lastname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lastname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Firstname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Firstname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Middlename)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Middlename)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nickname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nickname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Birthdate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Birthdate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sex)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sex)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Codep)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Codep)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Relationship)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Relationship)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-    </dl>
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center mt-3 mb-3">
+        <h3>Details</h3>
+    </div>
+    <div class="d-flex align-items-center justify-content-center" style="margin-left: 20%;">
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Lastname)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Lastname)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Firstname)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Firstname)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Middlename)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Middlename)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Nickname)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Nickname)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Birthdate)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Birthdate)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Age)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Age)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Sex)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Sex)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Codep)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Codep)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Relationship)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Relationship)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.ContactNumber)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.ContactNumber)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.EmailAddress)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.EmailAddress)
+                    </p>
+                </div>
+            </div>
+            <div class="row d-flex text-align-center justify-content-center">
+                <div>
+                        @Html.ActionLink(
+                                linkText: "Edit",
+                                actionName: "Details",
+                                controllerName: "Resident",
+                                routeValues: new { id = Model.IDResident },
+                                htmlAttributes: null
+                        ) |
+                    <a href="/Resident" class="btn btn-sm btn-primary">Go Back</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDResident }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

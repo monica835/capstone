@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary" onclick="">Assertion Summary</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary" id="collectible">Collectibles</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">Expenses-Date Range</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">Expenses-Unbilled to Codep</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">Expenses Per Month</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">Payments Collected-Date Range</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">Payments per Month</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+
+
+    });
+</script>

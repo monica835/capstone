@@ -43,6 +43,9 @@ namespace Icarus.Models
         public virtual DbSet<tblExpensesChartOfAccount> tblExpensesChartOfAccounts { get; set; }
         public virtual DbSet<tblExpensesForAssertion> tblExpensesForAssertions { get; set; }
         public virtual DbSet<tblFacilityReport> tblFacilityReports { get; set; }
+        public virtual DbSet<tblGroup> tblGroups { get; set; }
+        public virtual DbSet<tblGroupMember> tblGroupMembers { get; set; }
+        public virtual DbSet<tblGroupRight> tblGroupRights { get; set; }
         public virtual DbSet<tblInquiry> tblInquiries { get; set; }
         public virtual DbSet<tblInquiryCommLog> tblInquiryCommLogs { get; set; }
         public virtual DbSet<tblInquiryStatu> tblInquiryStatus { get; set; }
@@ -53,6 +56,7 @@ namespace Icarus.Models
         public virtual DbSet<tblRequestStatu> tblRequestStatus { get; set; }
         public virtual DbSet<tblResident> tblResidents { get; set; }
         public virtual DbSet<tblResidentActivity> tblResidentActivities { get; set; }
+        public virtual DbSet<tblRight> tblRights { get; set; }
         public virtual DbSet<tblStaff> tblStaffs { get; set; }
         public virtual DbSet<tblVendor> tblVendors { get; set; }
         public virtual DbSet<vAdmissionBrowse> vAdmissionBrowses { get; set; }

@@ -12,18 +12,10 @@ namespace Icarus.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblStaff
+    public partial class tblGroupMember
     {
+        public int IDGM { get; set; }
         public int IDStaff { get; set; }
-        public string Lastname { get; set; }
-        public string Firstname { get; set; }
-        public string ContactNo { get; set; }
-        public Nullable<System.DateTime> DateHired { get; set; }
-        public Nullable<System.DateTime> DateTerminated { get; set; }
-        public string Status { get; set; }
-        public string Notes { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public int IDGroup { get; set; }
     }
 }

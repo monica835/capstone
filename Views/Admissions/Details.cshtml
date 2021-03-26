@@ -2,121 +2,261 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center mt-3 mb-3">
+        <h3>Details</h3>
+    </div>
+    <div class="d-flex align-items-center justify-content-center" style="margin-left: 20%;">
+        
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.IDAdmission)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.IDAdmission)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.IDResident)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.IDResident)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.AdmissionDate)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.AdmissionDate)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TerminationDate)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.TerminationDate)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TreatmentFee)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.TreatmentFee)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.IsActive)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.IsActive)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Notes)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TotalBilling)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.TotalBilling)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.TotalPaid)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.TotalPaid)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.OverallBalance)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.OverallBalance)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.StopTFBilling)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.StopTFBilling)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Status)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.IDRank)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.IDRank)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>
+                        <b>
+                            @Html.DisplayNameFor(model => model.Phase)
+                        </b>
+                    </p>
+                </div>
+                <div class="col-sm-5">
+                    <p>
+                        @Html.DisplayFor(model => model.Phase)
+                    </p>
+                </div>
+            </div>
+            
+           
+            <div class="row d-flex text-align-center justify-content-center">
+                <div>
+                    @Html.ActionLink(
+                            linkText: "Edit",
+                            actionName: "Details",
+                            controllerName: "Resident",
+                            routeValues: new { id = Model.IDResident },
+                            htmlAttributes: null
+                    ) |
+                    <a href="/Resident" class="btn btn-sm btn-primary">Go Back</a>
+                    <a class="btn btn-sm btn-primary">Recalc</a>
 
-<div>
-    <h4>tblAdmission</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IDResident)
-        </dt>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IDResident)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AdmissionDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AdmissionDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TerminationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TerminationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TreatmentFee)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TreatmentFee)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalBilling)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TotalBilling)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalPaid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TotalPaid)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OverallBalance)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OverallBalance)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StopTFBilling)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StopTFBilling)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IDRank)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDRank)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phase)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phase)
-        </dd>
-
-    </dl>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDAdmission }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div id="one">
+    <div class="col-sm-5">
+        <a href="#">TreatmentFee</a>
+        <a href="#">Assertions</a>
+        <a href="#">PaymentHistory</a>
+        <a href="#">Attachments</a>
+        <a href="#">VitalSigns</a>
+        <a href="#">CommLog</a>
+
+    </div>
+</div>s
+
+<style>
+    .one {
+        margin-top: -577px;
+        margin-left: 551px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+

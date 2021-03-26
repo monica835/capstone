@@ -7,15 +7,19 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="">
+<div class="container">
     <div class="d-flex mt-2 justify-content-between">
         <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
+        <!--<form asp-controller=" AdmissionBrowses" asp-action="Index">
+        <input name="SearchString" class="form-control col-sm-4" type="search" placeholder="Search" aria-label="Search">
+    </form>-->
         <div>
             <a class="btn" href="/Admissions/Create" style="background-color:#4E58A2;color:white;">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;
                 New Admission
             </a>
             <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 <span>
                     &nbsp;  @Html.ActionLink("Generate Billing", "AdmInfo")
                 </span>
