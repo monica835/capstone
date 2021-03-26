@@ -10,109 +10,107 @@ using Icarus.Models;
 
 namespace Icarus.Controllers
 {
-    public class AdmissionsController : Controller
+    public class CollectibleController : Controller
     {
         private ICARUSDBEntities db = new ICARUSDBEntities();
 
-        // GET: tblAdmissions
+        // GET: Collectible
         public ActionResult Index()
         {
-            return View(db.vAdmissionBrowses.ToList());
+            return View(db.vrptCollectibles.ToList());
         }
 
-        // GET: tblAdmissions/Details/5
+        // GET: Collectible/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
-            if (tblAdmission == null)
+            vrptCollectible vrptCollectible = db.vrptCollectibles.Find(id);
+            if (vrptCollectible == null)
             {
                 return HttpNotFound();
             }
-            return View(tblAdmission);
+            return View(vrptCollectible);
         }
 
-        // GET: tblAdmissions/Create
+        // GET: Collectible/Create
         public ActionResult Create()
         {
             return View();
         }
 
-
-
-        // POST: tblAdmissions/Create
+        // POST: Collectible/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDAdmission,IDResident,AdmissionDate,TerminationDate,TreatmentFee,IsActive,Notes,TotalBilling,TotalPaid,OverallBalance,StopTFBilling,Status,IDRank,Phase")] tblAdmission tblAdmission)
+        public ActionResult Create([Bind(Include = "IDAdmission,IDResident,Resident,AdmissionDate,TerminationDate,TreatmentFee,TotalBilling,TotalPaid,OverallBalance,IsActive,LastPaymentInfo")] vrptCollectible vrptCollectible)
         {
             if (ModelState.IsValid)
             {
-                db.tblAdmissions.Add(tblAdmission);
+                db.vrptCollectibles.Add(vrptCollectible);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tblAdmission);
+            return View(vrptCollectible);
         }
 
-        // GET: tblAdmissions/Edit/5
+        // GET: Collectible/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
-            if (tblAdmission == null)
+            vrptCollectible vrptCollectible = db.vrptCollectibles.Find(id);
+            if (vrptCollectible == null)
             {
                 return HttpNotFound();
             }
-            return View(tblAdmission);
+            return View(vrptCollectible);
         }
 
-        // POST: tblAdmissions/Edit/5
+        // POST: Collectible/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDAdmission,IDResident,AdmissionDate,TerminationDate,TreatmentFee,IsActive,Notes,TotalBilling,TotalPaid,OverallBalance,StopTFBilling,Status,IDRank,Phase")] tblAdmission tblAdmission)
+        public ActionResult Edit([Bind(Include = "IDAdmission,IDResident,Resident,AdmissionDate,TerminationDate,TreatmentFee,TotalBilling,TotalPaid,OverallBalance,IsActive,LastPaymentInfo")] vrptCollectible vrptCollectible)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tblAdmission).State = EntityState.Modified;
+                db.Entry(vrptCollectible).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tblAdmission);
+            return View(vrptCollectible);
         }
 
-        // GET: tblAdmissions/Delete/5
+        // GET: Collectible/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
-            if (tblAdmission == null)
+            vrptCollectible vrptCollectible = db.vrptCollectibles.Find(id);
+            if (vrptCollectible == null)
             {
                 return HttpNotFound();
             }
-            return View(tblAdmission);
+            return View(vrptCollectible);
         }
 
-        // POST: tblAdmissions/Delete/5
+        // POST: Collectible/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tblAdmission tblAdmission = db.tblAdmissions.Find(id);
-            db.tblAdmissions.Remove(tblAdmission);
+            vrptCollectible vrptCollectible = db.vrptCollectibles.Find(id);
+            db.vrptCollectibles.Remove(vrptCollectible);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -126,5 +124,4 @@ namespace Icarus.Controllers
             base.Dispose(disposing);
         }
     }
-
 }

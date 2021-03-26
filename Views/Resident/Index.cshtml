@@ -60,6 +60,7 @@
                             @Html.DisplayFor(modelItem => item.Sex)
                         </td>
                         <td>
+
                             <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal">@Html.ActionLink("Edit", "Edit", new { id = item.IDResident })</button>
                             <button type="submit" class="btn btn-sm btn-danger deleteButton" id="@id">@Html.ActionLink("Delete", "Delete", new { id = item.IDResident })</button>
                         </td>

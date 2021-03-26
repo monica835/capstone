@@ -10,17 +10,17 @@ using Icarus.Models;
 
 namespace Icarus.Controllers
 {
-    public class AdmissionsController : Controller
+    public class AdmissionInfoController : Controller
     {
         private ICARUSDBEntities db = new ICARUSDBEntities();
 
-        // GET: tblAdmissions
+        // GET: AdmissionInfo
         public ActionResult Index()
         {
-            return View(db.vAdmissionBrowses.ToList());
+            return View(db.tblAdmissions.ToList());
         }
 
-        // GET: tblAdmissions/Details/5
+        // GET: AdmissionInfo/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,15 +35,13 @@ namespace Icarus.Controllers
             return View(tblAdmission);
         }
 
-        // GET: tblAdmissions/Create
+        // GET: AdmissionInfo/Create
         public ActionResult Create()
         {
             return View();
         }
 
-
-
-        // POST: tblAdmissions/Create
+        // POST: AdmissionInfo/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -60,7 +58,7 @@ namespace Icarus.Controllers
             return View(tblAdmission);
         }
 
-        // GET: tblAdmissions/Edit/5
+        // GET: AdmissionInfo/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,7 +73,7 @@ namespace Icarus.Controllers
             return View(tblAdmission);
         }
 
-        // POST: tblAdmissions/Edit/5
+        // POST: AdmissionInfo/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -91,7 +89,7 @@ namespace Icarus.Controllers
             return View(tblAdmission);
         }
 
-        // GET: tblAdmissions/Delete/5
+        // GET: AdmissionInfo/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,7 +104,7 @@ namespace Icarus.Controllers
             return View(tblAdmission);
         }
 
-        // POST: tblAdmissions/Delete/5
+        // POST: AdmissionInfo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -126,5 +124,4 @@ namespace Icarus.Controllers
             base.Dispose(disposing);
         }
     }
-
 }

@@ -130,14 +130,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmissionInfoController.cs" />
     <Compile Include="Controllers\AssertionsController.cs" />
     <Compile Include="Controllers\ChartOfAccountsController.cs" />
+    <Compile Include="Controllers\CollectibleController.cs" />
     <Compile Include="Controllers\ExpensController.cs" />
     <Compile Include="Controllers\FacilityReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InquiriesController.cs" />
     <Compile Include="Controllers\NavBarController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="Controllers\ResidentActivitiesController.cs" />
@@ -509,6 +511,18 @@
     <Content Include="Views\Admissions\Details.cshtml" />
     <Content Include="Views\Admissions\Edit.cshtml" />
     <Content Include="Views\Admissions\Index.cshtml" />
+    <Content Include="Views\Report\Report.cshtml" />
+    <Content Include="Views\AdmissionInfo\Create.cshtml" />
+    <Content Include="Views\AdmissionInfo\Delete.cshtml" />
+    <Content Include="Views\AdmissionInfo\Details.cshtml" />
+    <Content Include="Views\AdmissionInfo\Edit.cshtml" />
+    <Content Include="Views\AdmissionInfo\Index.cshtml" />
+    <Content Include="Views\Collectible\Create.cshtml" />
+    <Content Include="Views\Collectible\Delete.cshtml" />
+    <Content Include="Views\Collectible\Details.cshtml" />
+    <Content Include="Views\Collectible\Edit.cshtml" />
+    <Content Include="Views\Collectible\Index.cshtml" />
+    <Content Include="Views\Admissions\AdmInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

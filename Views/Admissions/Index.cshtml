@@ -1,28 +1,24 @@
-﻿@model IEnumerable<Icarus.Models.tblAdmission>
+﻿
+
+
+@model IEnumerable<Icarus.Models.vAdmissionBrowse>
+
 
 @{
     ViewBag.Title = "Index";
 }
 <div class="">
     <div class="d-flex mt-2 justify-content-between">
-<<<<<<< HEAD:Views/Admissions/Index.cshtml
         <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
-=======
-        <form asp-controller=" AdmissionBrowses" asp-action="Index">
-            <input name="SearchString" class="form-control col-sm-4" type="search" placeholder="Search" aria-label="Search">
-
-        </form>
->>>>>>> 5df7ffbdd108412f94ec3dfad7b1890bc8228da4:Views/AdmissionBrowses/Index.cshtml
         <div>
+            <a class="btn" href="/Admissions/Create" style="background-color:#4E58A2;color:white;">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;
+                New Admission
+            </a>
             <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-<<<<<<< HEAD:Views/Admissions/Index.cshtml
                 <span>
-                    &nbsp;  @Html.ActionLink("New Admission", "Create")
+                    &nbsp;  @Html.ActionLink("Generate Billing", "AdmInfo")
                 </span>
-=======
-                <span>&nbsp;New Admission </span>
->>>>>>> 5df7ffbdd108412f94ec3dfad7b1890bc8228da4:Views/AdmissionBrowses/Index.cshtml
             </button>
         </div>
     </div>
@@ -32,7 +28,13 @@
             <thead style="background-color: #6C7AE0; color: white;">
                 <tr style="font-size: 13px;">
                     <th>
-                        @Html.DisplayNameFor(model => model.IDResident)
+                        @Html.DisplayNameFor(model => model.IDAdmission)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Resident)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nickname)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.AdmissionDate)
@@ -44,12 +46,6 @@
                         @Html.DisplayNameFor(model => model.TreatmentFee)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.IsActive)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Notes)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.TotalBilling)
                     </th>
                     <th>
@@ -59,13 +55,16 @@
                         @Html.DisplayNameFor(model => model.OverallBalance)
                     </th>
                     <th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastPaymentInfo)
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.StopTFBilling)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IDRank)
+                        @Html.DisplayNameFor(model => model.rank)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Phase)
@@ -78,7 +77,19 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.IDResident)
+                            <a id="idadmission" href="/Admissions/AdmInfo" style="color:blue;cursor:pointer;text-decoration:underline;">
+                                @Html.DisplayFor(modelItem => item.IDAdmission)
+
+                            </a>
+                        </td>
+                        <td>
+                            <a id="idresident" href="/Resident/Details" style="color:blue;cursor:pointer;text-decoration:underline;">
+                                @Html.DisplayFor(modelItem => item.Resident)
+
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nickname)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.AdmissionDate)
@@ -90,12 +101,6 @@
                             @Html.DisplayFor(modelItem => item.TreatmentFee)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.IsActive)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Notes)
-                        </td>
-                        <td>
                             @Html.DisplayFor(modelItem => item.TotalBilling)
                         </td>
                         <td>
@@ -105,13 +110,16 @@
                             @Html.DisplayFor(modelItem => item.OverallBalance)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastPaymentInfo)
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => item.StopTFBilling)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IDRank)
+                            @Html.DisplayFor(modelItem => item.rank)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Phase)
@@ -151,4 +159,5 @@
             });
         });
     });
+
 </script>

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Icarus.Models.tblAdmission>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDResident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TerminationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TreatmentFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalBilling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OverallBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StopTFBilling)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDRank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phase)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDResident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TerminationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TreatmentFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalBilling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OverallBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StopTFBilling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDRank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phase)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDAdmission }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDAdmission }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDAdmission })
+        </td>
+    </tr>
+}
+
+</table>

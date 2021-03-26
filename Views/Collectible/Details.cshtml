@@ -1,0 +1,50 @@
+﻿@model Icarus.Models.vrptCollectible
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>vrptCollectible</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDResident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDResident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TerminationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPaymentInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastPaymentInfo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
