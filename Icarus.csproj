@@ -146,6 +146,7 @@
     <Compile Include="Controllers\ResidentController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\AdmissionsController.cs" />
+    <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Controllers\vrptAssertionSummariesController.cs" />
     <Compile Include="Controllers\vrptExpensController.cs" />
@@ -566,6 +567,11 @@
     <Content Include="Views\vrptPayments\Details.cshtml" />
     <Content Include="Views\vrptPayments\Edit.cshtml" />
     <Content Include="Views\vrptPayments\Index.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Staffs\Delete.cshtml" />
+    <Content Include="Views\Staffs\Details.cshtml" />
+    <Content Include="Views\Staffs\Edit.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
