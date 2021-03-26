@@ -5,19 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
+<div class="ml-4 mr-4">
     <div class="d-flex mt-2 justify-content-between">
         <input class="form-control col-sm-4" type="search" id="myInput" placeholder="Search" aria-label="Search">
         <div>
           
-            <button class="btn" style="background-color:#4E58A2;color:white;" data-toggle="modal" data-target="#extraLargeModal">
+            <a class="btn" href="/Inquiries/Create" style="background-color:#4E58A2;color:white;" >
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 <span>
                     &nbsp;
-                    @Html.ActionLink("Add Inquiry", "Create")
-
+                    Add Inquiry
                 </span>
-            </button>
+            </a>
         </div>
     </div>
     <hr>
@@ -71,14 +70,8 @@
                         @Html.DisplayFor(modelItem => item.FollowupOn)
                     </td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-warning">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.IDInquiry })
-
-                        </button>
-                        <button type="button" class="btn btn-sm btn-danger">
-                            @Html.ActionLink("Delete", "Delete", new { id = item.IDInquiry })
-
-                        </button>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IDInquiry })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IDInquiry })
                     </td>
                 </tr>
                 }

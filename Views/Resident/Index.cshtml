@@ -35,11 +35,16 @@
             <tbody id="myTable">
                 @foreach (var item in Model)
                 {
-                    var id = "#myID" + item.IDResident;
-                    var myID = "myID" + item.IDResident;
+                    var id = item.IDResident;
                     <tr>
                         <td scope="row">
-                            @Html.DisplayFor(modelItem => item.IDResident)
+                            @Html.ActionLink(
+                                linkText: id.ToString(),
+                                actionName: "Details",
+                                controllerName: "Resident",
+                                routeValues: new { id = id },
+                                htmlAttributes: null
+                            )
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Lastname)
@@ -86,5 +91,8 @@
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
+
+        
+
     });
 </script>

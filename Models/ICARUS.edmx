@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ICARUSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ICARUSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblAdmission">
           <Key>
             <PropertyRef Name="IDAdmission" />
@@ -198,6 +198,29 @@
           <Property Name="Activity" Type="varchar" MaxLength="1000" Nullable="false" />
           <Property Name="PostedBy" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblGroup">
+          <Key>
+            <PropertyRef Name="IDGroup" />
+          </Key>
+          <Property Name="IDGroup" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblGroupMembers">
+          <Key>
+            <PropertyRef Name="IDGM" />
+          </Key>
+          <Property Name="IDGM" Type="int" Nullable="false" />
+          <Property Name="IDStaff" Type="int" Nullable="false" />
+          <Property Name="IDGroup" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGroupRights">
+          <Key>
+            <PropertyRef Name="IDGR" />
+          </Key>
+          <Property Name="IDGR" Type="int" Nullable="false" />
+          <Property Name="IDGroup" Type="int" Nullable="false" />
+          <Property Name="IDRights" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblInquiry">
           <Key>
             <PropertyRef Name="IDInquiry" />
@@ -311,6 +334,13 @@
           <Property Name="Activity" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="PostedBy" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblRights">
+          <Key>
+            <PropertyRef Name="IDRights" />
+          </Key>
+          <Property Name="IDRights" Type="int" Nullable="false" />
+          <Property Name="RightsName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblStaff">
           <Key>
             <PropertyRef Name="IDStaff" />
@@ -323,6 +353,9 @@
           <Property Name="DateTerminated" Type="datetime" />
           <Property Name="Status" Type="varchar" MaxLength="50" />
           <Property Name="Notes" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblVendor">
           <Key>
@@ -787,6 +820,9 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <EntitySet Name="tblExpensesChartOfAccount" EntityType="Self.tblExpensesChartOfAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblExpensesForAssertion" EntityType="Self.tblExpensesForAssertion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblFacilityReport" EntityType="Self.tblFacilityReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGroup" EntityType="Self.tblGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGroupMembers" EntityType="Self.tblGroupMembers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGroupRights" EntityType="Self.tblGroupRights" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblInquiry" EntityType="Self.tblInquiry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblInquiryCommLog" EntityType="Self.tblInquiryCommLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblInquiryStatus" EntityType="Self.tblInquiryStatus" Schema="dbo" store:Type="Tables" />
@@ -797,6 +833,7 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <EntitySet Name="tblRequestStatus" EntityType="Self.tblRequestStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblResident" EntityType="Self.tblResident" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblResidentActivity" EntityType="Self.tblResidentActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRights" EntityType="Self.tblRights" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblStaff" EntityType="Self.tblStaff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblVendor" EntityType="Self.tblVendor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vAdmissionBrowse" EntityType="Self.vAdmissionBrowse" store:Type="Views" store:Schema="dbo">
@@ -1040,7 +1077,8 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
     FROM [dbo].[vselCodepUpdateBrowse] AS [vselCodepUpdateBrowse]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ICARUSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1237,6 +1275,29 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <Property Name="Activity" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblGroup">
+          <Key>
+            <PropertyRef Name="IDGroup" />
+          </Key>
+          <Property Name="IDGroup" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblGroupMember">
+          <Key>
+            <PropertyRef Name="IDGM" />
+          </Key>
+          <Property Name="IDGM" Type="Int32" Nullable="false" />
+          <Property Name="IDStaff" Type="Int32" Nullable="false" />
+          <Property Name="IDGroup" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGroupRight">
+          <Key>
+            <PropertyRef Name="IDGR" />
+          </Key>
+          <Property Name="IDGR" Type="Int32" Nullable="false" />
+          <Property Name="IDGroup" Type="Int32" Nullable="false" />
+          <Property Name="IDRights" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblInquiry">
           <Key>
             <PropertyRef Name="IDInquiry" />
@@ -1350,6 +1411,13 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <Property Name="Activity" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PostedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblRight">
+          <Key>
+            <PropertyRef Name="IDRights" />
+          </Key>
+          <Property Name="IDRights" Type="Int32" Nullable="false" />
+          <Property Name="RightsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="tblStaff">
           <Key>
             <PropertyRef Name="IDStaff" />
@@ -1362,6 +1430,9 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <Property Name="DateTerminated" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblVendor">
           <Key>
@@ -1751,6 +1822,9 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <EntitySet Name="tblExpensesChartOfAccounts" EntityType="Self.tblExpensesChartOfAccount" />
           <EntitySet Name="tblExpensesForAssertions" EntityType="Self.tblExpensesForAssertion" />
           <EntitySet Name="tblFacilityReports" EntityType="Self.tblFacilityReport" />
+          <EntitySet Name="tblGroups" EntityType="Self.tblGroup" />
+          <EntitySet Name="tblGroupMembers" EntityType="Self.tblGroupMember" />
+          <EntitySet Name="tblGroupRights" EntityType="Self.tblGroupRight" />
           <EntitySet Name="tblInquiries" EntityType="Self.tblInquiry" />
           <EntitySet Name="tblInquiryCommLogs" EntityType="Self.tblInquiryCommLog" />
           <EntitySet Name="tblInquiryStatus" EntityType="Self.tblInquiryStatu" />
@@ -1761,6 +1835,7 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
           <EntitySet Name="tblRequestStatus" EntityType="Self.tblRequestStatu" />
           <EntitySet Name="tblResidents" EntityType="Self.tblResident" />
           <EntitySet Name="tblResidentActivities" EntityType="Self.tblResidentActivity" />
+          <EntitySet Name="tblRights" EntityType="Self.tblRight" />
           <EntitySet Name="tblStaffs" EntityType="Self.tblStaff" />
           <EntitySet Name="tblVendors" EntityType="Self.tblVendor" />
           <EntitySet Name="vAdmissionBrowses" EntityType="Self.vAdmissionBrowse" />
@@ -1785,11 +1860,11 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
             <Parameter Name="IDChargeToCodep" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spGenerateTreatmentFee">
-          <Parameter Name="IDAdmission" Mode="In" Type="Int32" />
+            <Parameter Name="IDAdmission" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spJobGenerateTreatmentFee" />
           <FunctionImport Name="spRecalcAdmissionBalance">
-          <Parameter Name="IDAdmission" Mode="In" Type="Int32" />
+            <Parameter Name="IDAdmission" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spSendNotification">
             <Parameter Name="profilename" Mode="In" Type="String" />
@@ -2019,6 +2094,32 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblGroups">
+            <EntityTypeMapping TypeName="ICARUSDBModel.tblGroup">
+              <MappingFragment StoreEntitySet="tblGroup">
+                <ScalarProperty Name="IDGroup" ColumnName="IDGroup" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGroupMembers">
+            <EntityTypeMapping TypeName="ICARUSDBModel.tblGroupMember">
+              <MappingFragment StoreEntitySet="tblGroupMembers">
+                <ScalarProperty Name="IDGM" ColumnName="IDGM" />
+                <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+                <ScalarProperty Name="IDGroup" ColumnName="IDGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGroupRights">
+            <EntityTypeMapping TypeName="ICARUSDBModel.tblGroupRight">
+              <MappingFragment StoreEntitySet="tblGroupRights">
+                <ScalarProperty Name="IDGR" ColumnName="IDGR" />
+                <ScalarProperty Name="IDGroup" ColumnName="IDGroup" />
+                <ScalarProperty Name="IDRights" ColumnName="IDRights" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblInquiries">
             <EntityTypeMapping TypeName="ICARUSDBModel.tblInquiry">
               <MappingFragment StoreEntitySet="tblInquiry">
@@ -2142,6 +2243,14 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblRights">
+            <EntityTypeMapping TypeName="ICARUSDBModel.tblRight">
+              <MappingFragment StoreEntitySet="tblRights">
+                <ScalarProperty Name="IDRights" ColumnName="IDRights" />
+                <ScalarProperty Name="RightsName" ColumnName="RightsName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblStaffs">
             <EntityTypeMapping TypeName="ICARUSDBModel.tblStaff">
               <MappingFragment StoreEntitySet="tblStaff">
@@ -2153,6 +2262,9 @@ warning 6002: The table/view 'ICARUSDB.dbo.vselCodepUpdateBrowse' does not have 
                 <ScalarProperty Name="DateTerminated" ColumnName="DateTerminated" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
