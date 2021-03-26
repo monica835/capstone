@@ -77,13 +77,12 @@
                 {
                     <tr>
                         <td>
-                            <a id="idadmission" href="/Admissions/AdmInfo" style="color:blue;cursor:pointer;text-decoration:underline;">
+                            <a id="idadmission" href="/Admissions/Details/@item.IDAdmission" style="color:blue;cursor:pointer;text-decoration:underline;">
                                 @Html.DisplayFor(modelItem => item.IDAdmission)
-
                             </a>
                         </td>
                         <td>
-                            <a id="idresident" href="/Resident/Details" style="color:blue;cursor:pointer;text-decoration:underline;">
+                            <a id="idresident" href="/Resident/Details/@item.IDResident" style="color:blue;cursor:pointer;text-decoration:underline;">
                                 @Html.DisplayFor(modelItem => item.Resident)
 
                             </a>
